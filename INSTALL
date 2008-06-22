@@ -1,0 +1,33 @@
+			HColorCop Installation Instruction
+			==================================
+
+
+
+Required
+========
+QT version 4 or higher, can be freely downloaded from www.trolltech.com
+or ftp.trolltech.com
+
+
+Installation
+============
+the installation of hcolorcop is very easy, you should only enter these commands
+and hcolorcop should be installed.
+tar -xvzf hcolorcop-version.tar.gz
+cd hcolorcop-version
+make
+make install
+
+
+Changing installation directory
+===============================
+You can easaly change the installation directory during compiling by using
+make DEST=directory
+and
+make DEST=directory install
+
+
+Which files will be added
+=========================
+/usr/bin/hcolorcop
+

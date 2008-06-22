@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Haydar Color Cop
+Comment=Haydar Color Cop
+GenericName=Haydar Color Cop
+Description=Haydar Color Cop
+Terminal=false
+Type=Application
+Categories=Application;Utility
+Exec=hcolorcop
+Category=Utility
+Icon=hcolorcop.png
