@@ -22,4 +22,4 @@ dpkg-deb --build debian/hcoloredit
 
 rm -rf debian/hcoloredit
 
-mv debian/hcoloredit.deb debian/hcoloredit_$DVERSION-1_all.deb
+mv debian/hcoloredit.deb debian/hcolorcop_$DVERSION-1_i386.deb

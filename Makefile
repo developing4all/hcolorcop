@@ -17,7 +17,7 @@ DVERSION = 0.9.0
 
 all: config
 	cd hcolorcop ; $(qmake) hcolorcop.pro; $(MAKE)
-#	cd hcolorcop ; $(qmake); $(lrelease) hcolorcop.pro \
+	cd hcolorcop ; $(lrelease) hcolorcop.pro 
 
 
 config: Makefile
@@ -30,7 +30,7 @@ config: Makefile
 	
 distclean:
 	cd hcolorcop ; $(qmake); 	$(MAKE) distclean
-#	cd debian; rm -f hde_* libhde_*
+	cd debian; rm -f hcolorcop_*
 	rm -f config
 	rm -f *~ core config
 
