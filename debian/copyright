@@ -1,21 +1,36 @@
 This package was debianized by Haydar Alkaduhimi <haydar@haydarlinux.org> on
-Sun, 27 Jan 2008 13:21:03 +0100.
+Mon, 23 Jun 2008 22:42:00 +0200.
 
-It was downloaded from http://sourceforge.net/projects/hde/
+It was downloaded from <http://sourceforge.net/projects/hcolorcop/>
 
 Upstream Author(s): 
 
-    Haydar Alkaduhimi <haydar@haydarlinux.org>
+    Haydar Alkaduhimi
 
 Copyright: 
 
-    This software is copyright (c) 2001-2008 by Haydar Net, Haydar Alkaduhimi.
+    Copyright (C) 2008 Haydar Alkaduhimi <haydar@haydarlinux.org>
 
 License:
 
-	You are free to distribute this software under the terms of 12 the GNU 
-	General Public License.
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+ 
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+ 
+    You should have received a copy of the GNU General Public License
+    along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-The Debian packaging is (C) 2001 - 2008, Haydar Alkaduhimi <haydar@haydarlinux.org>
-and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+The Debian packaging is (C) 2008, Haydar Alkaduhimi <haydar@haydarlinux.org> and
+is licensed under the GPL, see above.
+
 

@@ -2,16 +2,16 @@ SHELL = /bin/sh
 
 QTDIR=/usr/share/qt4
 
-ROOT  = /
-DEST  = $(ROOT)/usr
+DESTDIR  = /
+DEST  = $(DESTDIR)/usr
 qmake = $(QTDIR)/bin/qmake
 lrelease = $(QTDIR)/bin/lrelease
 #DEST  = /usr/local
 BINPATH = $(DEST)/bin
 
 DATAPATH = $(DEST)/share
-STYLESDIR= $(ROOT)/$(QTDIR)/plugins/styles
-DESIGDIR= $(ROOT)/$(QTDIR)/plugins/designer
+STYLESDIR= $(DESTDIR)/$(QTDIR)/plugins/styles
+DESIGDIR= $(DESTDIR)/$(QTDIR)/plugins/designer
 
 DVERSION = 0.9.1
 
@@ -31,11 +31,13 @@ config: Makefile
 distclean:
 	cd hcolorcop ; $(qmake); 	$(MAKE) distclean
 	cd debian; rm -f hcolorcop_*
+	cd lng; rm -f *.qm
 	rm -f config
 	rm -f *~ core config
 
 clean:
 	cd hcolorcop ; $(qmake); 	$(MAKE) clean
+	cd lng; rm -f *.qm
 	rm -f config
 	rm -f *~ core config
 

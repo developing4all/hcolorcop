@@ -1,0 +1,12 @@
+hcolorcop (0.9.1-1haydarlinux2) taha; urgency=low
+
+  * Fixed mouse grab bug in Qt 4.4.3.
+  * Changed the color label to a bottom, later we will make it change the color with a color picker.
+
+ -- Haydar Alkaduhimi <haydar@haydarlinux.org>  Wed, 15 Oct 2008 22:46:36 +0200
+
+hcolorcop (0.9.0-1haydarlinux1) taha; urgency=low
+
+  * Initial Release.
+
+ -- Haydar Alkaduhimi <haydar@haydarlinux.org>  Mon, 23 Jun 2008 22:42:00 +0200
