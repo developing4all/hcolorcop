@@ -84,6 +84,11 @@ void HColorCop::mouseMoveEvent ( QMouseEvent * event )
 {
     if ( grabbing )
 		screenLabel->grabScreen( mapToGlobal(event->pos()), multiply );
+	else
+	{
+		if(qApp->widgetAt(mapToGlobal(event->pos())) != ui.screenShot)
+			mouseGrabber()->releaseMouse();
+	}
 }
 
 void HColorCop::mousePressEvent ( QMouseEvent * event )

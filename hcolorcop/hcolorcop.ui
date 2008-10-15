@@ -15,16 +15,20 @@
     <height>400</height>
    </size>
   </property>
+  <property name="mouseTracking" >
+   <bool>true</bool>
+  </property>
   <property name="windowTitle" >
    <string>Haydar Color Cop</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="hcolorcop.qrc" >:/images/hcolorcop-20.png</iconset>
+   <iconset resource="hcolorcop.qrc" >
+    <normaloff>:/images/hcolorcop-20.png</normaloff>:/images/hcolorcop-20.png</iconset>
   </property>
   <property name="autoFillBackground" >
    <bool>true</bool>
   </property>
-  <layout class="QVBoxLayout" >
+  <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
     <layout class="QHBoxLayout" >
      <item>
@@ -172,7 +176,7 @@
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>20</width>
        <height>16</height>
@@ -181,67 +185,55 @@
     </spacer>
    </item>
    <item>
-    <layout class="QHBoxLayout" >
-     <property name="spacing" >
-      <number>0</number>
-     </property>
+    <layout class="QHBoxLayout" name="horizontalLayout" >
      <item>
-      <layout class="QHBoxLayout" >
-       <item>
-        <widget class="QLabel" name="colorLabel" >
-         <property name="minimumSize" >
-          <size>
-           <width>70</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>70</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="autoFillBackground" >
-          <bool>true</bool>
-         </property>
-         <property name="frameShape" >
-          <enum>QFrame::Box</enum>
-         </property>
-         <property name="text" >
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pickerBtn" >
-         <property name="minimumSize" >
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="icon" >
-          <iconset resource="hcolorcop.qrc" >:/images/picker.gif</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QPushButton" name="colorLabel" >
+       <property name="minimumSize" >
+        <size>
+         <width>75</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>75</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pickerBtn" >
+       <property name="minimumSize" >
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="icon" >
+        <iconset resource="hcolorcop.qrc" >
+         <normaloff>:/images/picker.gif</normaloff>:/images/picker.gif</iconset>
+       </property>
+      </widget>
      </item>
      <item>
       <spacer>
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
-         <width>18</width>
-         <height>20</height>
+         <width>25</width>
+         <height>24</height>
         </size>
        </property>
       </spacer>
@@ -288,7 +280,7 @@
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>20</width>
        <height>15</height>
@@ -305,7 +297,7 @@
          <property name="orientation" >
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" >
+         <property name="sizeHint" stdset="0" >
           <size>
            <width>20</width>
            <height>21</height>
@@ -343,6 +335,9 @@
            <height>135</height>
           </size>
          </property>
+         <property name="mouseTracking" >
+          <bool>true</bool>
+         </property>
          <property name="frameShape" >
           <enum>QFrame::Box</enum>
          </property>
@@ -365,7 +360,7 @@
          <property name="sizeType" >
           <enum>QSizePolicy::Fixed</enum>
          </property>
-         <property name="sizeHint" >
+         <property name="sizeHint" stdset="0" >
           <size>
            <width>20</width>
            <height>24</height>
@@ -380,7 +375,7 @@
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>40</width>
          <height>20</height>
@@ -395,7 +390,7 @@
          <property name="orientation" >
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" >
+         <property name="sizeHint" stdset="0" >
           <size>
            <width>20</width>
            <height>21</height>
@@ -1239,6 +1234,9 @@
            <width>135</width>
            <height>135</height>
           </size>
+         </property>
+         <property name="mouseTracking" >
+          <bool>true</bool>
          </property>
          <property name="frameShape" >
           <enum>QFrame::Panel</enum>

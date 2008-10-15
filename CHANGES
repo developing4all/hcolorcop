@@ -1,1 +1,5 @@
+0.9.1 - Fixed mouse grab bug in Qt 4.4.3
+      - Changed the color label to a bottom, later we will 
+	    make it change the color with a color picker.
+
 0.9.0 - Initial build
