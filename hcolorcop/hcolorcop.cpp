@@ -115,6 +115,7 @@ void HColorCop::mouseReleaseEvent ( QMouseEvent * event )
 
 void HColorCop::setColor( QRgb rgb )
 {
+	//QRgb QColorDialog::getRgba ( QRgb initial = 0xffffffff, bool * ok = 0, QWidget * parent = 0 )   [static]
 	QPalette p(ui.colorLabel->palette());
 	p.setColor(ui.colorLabel->backgroundRole(), QColor(rgb));
 	ui.colorLabel->setPalette(p);
