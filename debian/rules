@@ -50,14 +50,14 @@ install: build
 	# Add here commands to install the package into debian/hcolorcop.
 	$(MAKE) DESTDIR=$(CURDIR)/debian/hcolorcop install
 	mkdir -p debian/hcolorcop/usr/share/applications
-	mkdir -p debian/hcolorcop/usr/share/icons
-	#mkdir -p debian/hcolorcop/usr/share/icons/hicolor/128x128/apps
-	#install icons/hcolorcop.png debian/hcolorcop/usr/share/icons/hicolor/128x128/apps/
-	install hcolorcop/images/hcolorcop-48.png debian/hcolorcop/usr/share/icons/hcolorcop.png
-	#for s in 96x96 64x64 48x48 32x32 22x22 16x16; do \
-	#	mkdir -p debian/hcolorcop/usr/share/icons/hicolor/$${s}/apps ;\
-	#	install icons/hcolorcop-$${s}.png debian/hcolorcop/usr/share/icons/hicolor/$${s}/apps/hcolorcop.png ;\
-	#done
+	#mkdir -p debian/hcolorcop/usr/share/icons
+	mkdir -p debian/hcolorcop/usr/share/icons/hicolor/128x128/apps
+	install hcolorcop/images/hcolorcop-128x128.png debian/hcolorcop/usr/share/icons/hicolor/128x128/apps/
+	install hcolorcop/images/hcolorcop-128x128.png debian/hcolorcop/usr/share/icons/hcolorcop.png
+	for s in 96x96 64x64 48x48 32x32 22x22 16x16; do \
+		mkdir -p debian/hcolorcop/usr/share/icons/hicolor/$${s}/apps ;\
+		install hcolorcop/images/hcolorcop-$${s}.png debian/hcolorcop/usr/share/icons/hicolor/$${s}/apps/hcolorcop.png ;\
+	done
 	mkdir -p debian/hcolorcop/usr/share/applications
 	install hcolorcop.desktop debian/hcolorcop/usr/share/applications
 
@@ -74,7 +74,7 @@ binary-arch: build install
 	dh_installdocs
 	dh_installexamples
 #	dh_install
-#	dh_installmenu
+	dh_installmenu
 #	dh_installdebconf	
 #	dh_installlogrotate
 #	dh_installemacsen

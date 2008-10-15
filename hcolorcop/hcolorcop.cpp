@@ -130,7 +130,7 @@ void HColorCop::setColor( QRgb rgb )
 	
 	//rgbval << rgb;
 	QColor color(rgb);
-	ui.colorName->setText(color.name());
+	ui.colorName->setText( color.name().toUpper() );
 	
 	ui.hueSpin->setValue(color.hue());
 	ui.saturationSpin->setValue(color.saturation());

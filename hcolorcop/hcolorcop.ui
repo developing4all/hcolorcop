@@ -23,7 +23,7 @@
   </property>
   <property name="windowIcon" >
    <iconset resource="hcolorcop.qrc" >
-    <normaloff>:/images/hcolorcop-20.png</normaloff>:/images/hcolorcop-20.png</iconset>
+    <normaloff>:/images/hcolorcop-32x32.png</normaloff>:/images/hcolorcop-32x32.png</iconset>
   </property>
   <property name="autoFillBackground" >
    <bool>true</bool>

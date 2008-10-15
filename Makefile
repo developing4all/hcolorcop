@@ -13,7 +13,7 @@ DATAPATH = $(DEST)/share
 STYLESDIR= $(DESTDIR)/$(QTDIR)/plugins/styles
 DESIGDIR= $(DESTDIR)/$(QTDIR)/plugins/designer
 
-DVERSION = 0.9.1
+DVERSION = 0.9.2
 
 all: config
 	cd hcolorcop ; $(qmake) hcolorcop.pro; $(MAKE)

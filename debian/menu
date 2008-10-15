@@ -1,0 +1,2 @@
+?package(hcolorcop):needs="X11" section="Applications/Utility"\
+  title="hcolorcop" command="/usr/bin/hcolorcop"

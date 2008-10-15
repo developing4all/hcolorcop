@@ -1,3 +1,10 @@
+hcolorcop (0.9.2-1haydarlinux2) taha; urgency=low
+
+  * Fixed the debian package.
+  * Added new icons.
+
+ -- Haydar Alkaduhimi <haydar@haydarlinux.org>  Wed, 15 Oct 2008 22:43:42 +0200
+
 hcolorcop (0.9.1-1haydarlinux2) taha; urgency=low
 
   * Fixed mouse grab bug in Qt 4.4.3.

@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for hcolorcop
+# postinst script for win2lin
 #
 # see: dh_installdeb(1)
 
@@ -20,9 +20,11 @@ set -e
 
 case "$1" in
     configure)
+    if test -x /usr/bin/update-menus; then update-menus; fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
+    #if test -x /usr/bin/update-menus; then update-menus; fi
     ;;
 
     *)
