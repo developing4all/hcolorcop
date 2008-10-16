@@ -1,3 +1,9 @@
+hcolorcop (0.9.3-1haydarlinux2) taha; urgency=low
+
+  * Color choser when you click on the color button.
+
+ -- Haydar Alkaduhimi <haydar@haydarlinux.org>  Fri, 17 Oct 2008 00:38:30 +0200
+
 hcolorcop (0.9.2-1haydarlinux2) taha; urgency=low
 
   * Fixed the debian package.
@@ -8,7 +14,7 @@ hcolorcop (0.9.2-1haydarlinux2) taha; urgency=low
 hcolorcop (0.9.1-1haydarlinux2) taha; urgency=low
 
   * Fixed mouse grab bug in Qt 4.4.3.
-  * Changed the color label to a bottom, later we will make it change the color with a color picker.
+  * Changed the color label to a button, later we will make it change the color with a color picker.
 
  -- Haydar Alkaduhimi <haydar@haydarlinux.org>  Wed, 15 Oct 2008 22:46:36 +0200
 

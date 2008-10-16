@@ -13,7 +13,7 @@ DATAPATH = $(DEST)/share
 STYLESDIR= $(DESTDIR)/$(QTDIR)/plugins/styles
 DESIGDIR= $(DESTDIR)/$(QTDIR)/plugins/designer
 
-DVERSION = 0.9.2
+DVERSION = 0.9.3
 
 all: config
 	cd hcolorcop ; $(qmake) hcolorcop.pro; $(MAKE)
@@ -53,6 +53,20 @@ dist:	distclean
 install: all
 	mkdir -p $(BINPATH)
 	cd hcolorcop    ; install -s ./hcolorcop $(BINPATH)/hcolorcop
+	mkdir -p $(DEST)/share/applications
+	#mkdir -p $(DEST)/share/icons
+	mkdir -p $(DEST)/share/icons/hicolor/128x128/apps
+	mkdir -p $(DEST)/share/icons/gnome/128x128/apps
+	install hcolorcop/images/hcolorcop-128x128.png $(DEST)/share/icons/hicolor/128x128/apps/
+	#install hcolorcop/images/hcolorcop-128x128.png $(DEST)/share/icons/hcolorcop.png
+	for s in 96x96 64x64 48x48 32x32 22x22 16x16; do \
+		mkdir -p $(DEST)/share/icons/hicolor/$${s}/apps ;\
+		mkdir -p $(DEST)/share/icons/gnome/$${s}/apps ;\
+		install hcolorcop/images/hcolorcop-$${s}.png $(DEST)/share/icons/hicolor/$${s}/apps/hcolorcop.png ;\
+		install hcolorcop/images/hcolorcop-$${s}.png $(DEST)/share/icons/gnome/$${s}/apps/hcolorcop.png ;\
+	done
+	mkdir -p $(DEST)/share/applications
+	install hcolorcop.desktop $(DEST)/share/applications
 #	cp ./README $(SHAREPATH)/README
 	
 #	find $(SHAREPATH) -type d -name CVS | xargs rm -rf

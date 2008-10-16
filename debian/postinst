@@ -21,7 +21,8 @@ set -e
 case "$1" in
     configure)
     if test -x /usr/bin/update-menus; then update-menus; fi
-    ;;
+	if test -x /usr/bin/gtk-update-icon-cache; then gtk-update-icon-cache; fi
+	;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
     #if test -x /usr/bin/update-menus; then update-menus; fi

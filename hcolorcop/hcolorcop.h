@@ -17,6 +17,7 @@ class HColorCop : public QDialog
      
  public slots:
 	void pickerClick();
+	void colorClick();
 	void plusClicked(bool);
 	void minClicked(bool);
  	void setColor( QRgb );
@@ -29,6 +30,7 @@ class HColorCop : public QDialog
      virtual void mouseReleaseEvent ( QMouseEvent * event );
 	 
  private:
+ 	QRgb currentColor;
 	bool grabbing;
 	HScreenWidget *screenLabel;
 	Ui::HColorCop ui;

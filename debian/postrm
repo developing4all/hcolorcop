@@ -22,6 +22,7 @@ set -e
 case "$1" in
     purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
     if test -x /usr/bin/update-menus; then update-menus; fi
+	if test -x /usr/bin/gtk-update-icon-cache; then gtk-update-icon-cache; fi
     ;;
 
     *)

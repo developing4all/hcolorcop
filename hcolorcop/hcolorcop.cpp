@@ -2,6 +2,7 @@
 #include "hcolorcop.h"
 
 #include <QMouseEvent>
+#include <QColorDialog>
 
 HColorCop::HColorCop()
          : QDialog()
@@ -36,6 +37,9 @@ HColorCop::HColorCop()
 	connect( ui.greenSpin, SIGNAL( valueChanged( int ) ), this, SLOT( setRgb( int ) ));
 	connect( ui.blueSpin, SIGNAL( valueChanged( int ) ), this, SLOT( setRgb( int ) ));
 	
+	connect( ui.colorLabel, SIGNAL( pressed() ), this, SLOT(colorClick()));
+	
+	
 	screenLabel->grabScreen( QCursor::pos(), multiply );
 	screenLabel->stopTimers();
 }
@@ -69,6 +73,13 @@ void HColorCop::setRgb(int)
 {
 	QColor color( ui.redSpin->value(), ui.greenSpin->value(), ui.blueSpin->value());
 	setColor( color.rgb() );
+}
+
+void HColorCop::colorClick()
+{
+	//bool * ok = 0;
+	QRgb rgb = QColorDialog::getRgba ( currentColor/*, ok, this*/);
+	setColor( rgb );
 }
 
 void HColorCop::pickerClick()
@@ -115,7 +126,7 @@ void HColorCop::mouseReleaseEvent ( QMouseEvent * event )
 
 void HColorCop::setColor( QRgb rgb )
 {
-	//QRgb QColorDialog::getRgba ( QRgb initial = 0xffffffff, bool * ok = 0, QWidget * parent = 0 )   [static]
+	currentColor = rgb;
 	QPalette p(ui.colorLabel->palette());
 	p.setColor(ui.colorLabel->backgroundRole(), QColor(rgb));
 	ui.colorLabel->setPalette(p);
