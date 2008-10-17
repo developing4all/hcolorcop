@@ -3,6 +3,8 @@ TARGET =
 DEPENDPATH += . release
 INCLUDEPATH += .
 
+RC_FILE = hcolorcop.rc
+
 # Input
 HEADERS += hcolorcop.h hscreenwidget.h hscreencolors.h
 FORMS += hcolorcop.ui

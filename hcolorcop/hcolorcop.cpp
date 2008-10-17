@@ -145,10 +145,15 @@ void HColorCop::updateColorMap()
 void HColorCop::setColor( QRgb rgb )
 {
 	currentColor = rgb;
+	
+	QPixmap pix(60, 12);
+	pix.fill(QColor(rgb));
+	ui.colorLabel->setIcon( QIcon(pix) );
+	/*
 	QPalette p(ui.colorLabel->palette());
 	p.setColor(ui.colorLabel->backgroundRole(), QColor(rgb));
 	ui.colorLabel->setPalette(p);
-	
+	*/
 	
 	disconnect( ui.hueSpin, SIGNAL( valueChanged( int ) ), this, SLOT( setHsv( int ) ));
 	disconnect( ui.saturationSpin, SIGNAL( valueChanged( int ) ), this, SLOT( setHsv( int ) ));
