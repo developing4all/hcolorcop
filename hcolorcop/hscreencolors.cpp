@@ -3,11 +3,12 @@
 #include "hscreencolors.h"
 #include <QPainter>
 #include <QSize>
+#include <QMouseEvent>
 
 #include <iostream>
 using std:: cout; using std::endl;using std::cerr;
 #include <math.h>
-
+//#include <cmath>
 
 HScreenColors::HScreenColors( QWidget *parent )
 	: QLabel(parent)
@@ -23,14 +24,27 @@ void HScreenColors::setImage( QImage img )
 
 void HScreenColors::enterEvent( QEvent * )
 {
+	grabMouse( QCursor( QPixmap(":images/picker_cursor.gif")) );
 }
 
 void HScreenColors::leaveEvent( QEvent * )
 {
+	releaseMouse();
 }
 
-void HScreenColors::mousePressEvent( QMouseEvent * )
+void HScreenColors::mousePressEvent( QMouseEvent * event )
 {
+	releaseMouse();
+	//currentPos = event->pos();
+	QImage img =  QPixmap::grabWindow( winId() ).toImage();
+	QRgb color = img.pixel(event->pos());
+	
+	emit rgbChanged( color );
+	/*
+	repaint();
+	emit rgbChanged( color );
+	emit imageChanged( img );
+	*/
 }
 
 void HScreenColors::paintEvent( QPaintEvent * )
@@ -41,17 +55,35 @@ void HScreenColors::paintEvent( QPaintEvent * )
 	{
 		QVector<QRgb> colortable = image.colorTable();
 		
-		
-		//cout << colortable.size() << endl;
-		//cout << image.numColors() << endl;
-		//cout << image.size().width() << endl;
+		/*
+		cout << "colortable.size(): " << colortable.size() << endl;
+		cout << "image.numColors(): " << image.numColors() << endl;
+		cout << "image.size().width(): " << image.size().width() << endl;
+		*/
 		double numRows = sqrt( image.numColors() );
-		//cout << numRows << endl;
+		//cout << "numRows: " << numRows << endl;
+		double rest = fmod(numRows , 1.0);
+		//cout << "rest: " << rest << endl;
+		if( rest > 0)
+			numRows += 1;
+		double width = image.size().width() / numRows;
+		
+		int x = 0;
+		int y = 0;
 		
 		for (int i = 0; i < colortable.size(); ++i)
 		{
+			if(x >= (numRows*width))
+			{
+				x = 0;
+				y += width;
+			}
+			
+			QColor currentColor( colortable.at(i) );
+			painter.fillRect( QRect(x,y, width, width), QBrush(currentColor));
 			//if (vector.at(i) == "Alfonso")
 			//	cout << "Found Alfonso at position " << i << endl;
+			x += width;
 		}
 	}
 	

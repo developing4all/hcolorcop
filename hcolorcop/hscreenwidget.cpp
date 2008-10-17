@@ -38,9 +38,9 @@ void HScreenWidget::grabScreen( QPoint pos, int mult )
 	mousePos = pos;
 	currentPos = QPoint(68, 68 );
 	repaint();
+	screenTimer->start(200);
 	emit rgbChanged( color );
 	emit imageChanged( img );
-	screenTimer->start(200);
 //	return color;
 }
 
@@ -55,6 +55,8 @@ void HScreenWidget::regrabScreen()
 void HScreenWidget::stopTimers()
 {
 	screenTimer->stop();
+	emit rgbChanged( color );
+	emit imageChanged( img );
 }
 
 void HScreenWidget::enterEvent( QEvent * event )

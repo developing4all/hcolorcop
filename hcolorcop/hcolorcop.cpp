@@ -3,11 +3,16 @@
 
 #include <QMouseEvent>
 #include <QColorDialog>
+#include <QTimer>
+#include "conf.h"
 
 HColorCop::HColorCop()
          : QDialog()
 {
 	ui.setupUi(this);
+	
+	setWindowTitle( tr("Haydar Color Cop (version %1)").arg( DVERSION ) );
+	
 	grabbing = false;
 	
 	multiply = 2;
@@ -26,6 +31,7 @@ HColorCop::HColorCop()
 	
 	connect( screenLabel, SIGNAL(rgbChanged( QRgb )), this, SLOT(setColor( QRgb ) ));
 	connect( screenLabel, SIGNAL(imageChanged( QImage )), ui.screenColors, SLOT(setImage( QImage ) ));
+	connect( ui.screenColors, SIGNAL(rgbChanged( QRgb )), this, SLOT(setColor( QRgb ) ));
 	//imageChanged( Image );
 	//setImage
 	
@@ -42,6 +48,8 @@ HColorCop::HColorCop()
 	
 	screenLabel->grabScreen( QCursor::pos(), multiply );
 	screenLabel->stopTimers();
+	
+	QTimer::singleShot(200, this, SLOT(updateColorMap()));
 }
 
 void HColorCop::plusClicked(bool)
@@ -97,8 +105,11 @@ void HColorCop::mouseMoveEvent ( QMouseEvent * event )
 		screenLabel->grabScreen( mapToGlobal(event->pos()), multiply );
 	else
 	{
-		if(qApp->widgetAt(mapToGlobal(event->pos())) != ui.screenShot)
+		if((qApp->widgetAt(mapToGlobal(event->pos())) != ui.screenShot) &&
+			(qApp->widgetAt(mapToGlobal(event->pos())) != ui.screenColors) )
 			mouseGrabber()->releaseMouse();
+		else
+			qApp->widgetAt(mapToGlobal(event->pos()))->grabMouse( QCursor( QPixmap(":images/picker_cursor.gif")) );
 	}
 }
 
@@ -123,6 +134,13 @@ void HColorCop::mouseReleaseEvent ( QMouseEvent * event )
 		screenLabel->stopTimers();
 	}
 }
+
+void HColorCop::updateColorMap()
+{
+	ui.screenColors->setImage(screenLabel->getImage());
+	ui.screenColors->repaint();
+}
+
 
 void HColorCop::setColor( QRgb rgb )
 {

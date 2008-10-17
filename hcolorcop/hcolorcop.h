@@ -23,6 +23,7 @@ class HColorCop : public QDialog
  	void setColor( QRgb );
 	void setHsv(int);
 	void setRgb(int);
+	void updateColorMap();
      
  protected:
      virtual void mouseMoveEvent ( QMouseEvent * event ); 

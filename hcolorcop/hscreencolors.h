@@ -15,6 +15,9 @@ class HScreenColors : public QLabel
  public slots:
      void setImage( QImage );
 	 
+ signals:
+ 	void rgbChanged( QRgb );
+	
  protected:
 	 virtual void paintEvent( QPaintEvent * );
 	 virtual void enterEvent( QEvent * );

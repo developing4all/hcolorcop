@@ -14,6 +14,7 @@ class HScreenWidget : public QLabel
      void grabScreen( QPoint, int );
 	 void setMultiply(int m){ multiply = m; repaint();};
 	 void stopTimers();
+	 QImage getImage(){return img;};
 	 
  public slots:
      void regrabScreen();
