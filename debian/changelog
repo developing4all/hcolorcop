@@ -1,3 +1,9 @@
+hcolorcop (0.9.5-1haydarlinux2) taha; urgency=low
+
+  * Implemented the color table.
+
+ -- Haydar Alkaduhimi <haydar@haydarlinux.org>  Fri, 17 Oct 2008 22:49:21 +0200
+
 hcolorcop (0.9.4-1haydarlinux2) taha; urgency=low
 
   * Implemented the color table.

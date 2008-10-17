@@ -4,6 +4,7 @@
 #include <QMouseEvent>
 #include <QColorDialog>
 #include <QTimer>
+#include <QPainter>
 #include "conf.h"
 
 HColorCop::HColorCop()
@@ -146,8 +147,17 @@ void HColorCop::setColor( QRgb rgb )
 {
 	currentColor = rgb;
 	
-	QPixmap pix(60, 12);
+	QPixmap pix(62, 14);
 	pix.fill(QColor(rgb));
+    QPainter p(&pix);
+    p.setPen(Qt::black);
+	p.drawLine(0, 0, 0, 14);
+	p.drawLine(0, 0, 62, 0);
+    p.setPen(Qt::white);
+	p.drawLine(61, 0, 61, 13);
+	p.drawLine(0, 13, 61, 13);
+	p.end();
+	
 	ui.colorLabel->setIcon( QIcon(pix) );
 	/*
 	QPalette p(ui.colorLabel->palette());
