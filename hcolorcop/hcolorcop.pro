@@ -1,6 +1,7 @@
 TEMPLATE = app
 TARGET = 
 DEPENDPATH += . release
+CONFIG += release
 INCLUDEPATH += .
 
 RC_FILE = hcolorcop.rc
