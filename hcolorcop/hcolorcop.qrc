@@ -1,12 +1,8 @@
 <RCC>
   <qresource prefix="/" >
     <file>images/hcolorcop-16x16.png</file>
-    <file>images/hcolorcop-20.png</file>
-    <file>images/hcolorcop-22.png</file>
     <file>images/hcolorcop-22x22.png</file>
-    <file>images/hcolorcop-32.png</file>
     <file>images/hcolorcop-32x32.png</file>
-    <file>images/hcolorcop-48.png</file>
     <file>images/hcolorcop-48x48.png</file>
     <file>images/hcolorcop-64x64.png</file>
     <file>images/hcolorcop-96x96.png</file>
