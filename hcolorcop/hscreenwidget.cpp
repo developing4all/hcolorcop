@@ -30,7 +30,7 @@ HScreenWidget::HScreenWidget( QWidget *parent )
 void HScreenWidget::grabScreen( QPoint pos, int mult )
 {
 	if(!screenTimer->isActive())
-		screenShot = QPixmap::grabWindow( QApplication::desktop()->winId() ).toImage();
+		screenShot = QPixmap::grabWindow( QApplication::desktop()->screen( QApplication::desktop()->screenNumber(pos) )->winId() ).toImage();
 	
 	color = screenShot.pixel(pos);
 	

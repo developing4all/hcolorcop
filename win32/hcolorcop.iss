@@ -5,7 +5,7 @@
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{A9A9BEAA-4545-468A-AFDA-A740ECC012E8}
+AppId={{EBD0B8EB-3D2D-42F1-89CA-4DD94F815845}
 AppName=Haydar Color Cop
 AppVerName=Haydar Color Cop 0.9.5
 AppPublisher=Haydar Net
@@ -14,7 +14,7 @@ AppSupportURL=http://www.haydarnet.nl
 AppUpdatesURL=http://www.haydarnet.nl
 DefaultDirName={pf}\Haydar Net\Haydar Color Cop
 DefaultGroupName=Haydar Net\Haydar Color Cop
-OutputBaseFilename=setup_hcolorcop
+OutputBaseFilename=hcolorcop_setup
 SetupIconFile=C:\Apps\hcolorcop\hcolorcop\images\hcolorcop.ico
 Compression=lzma
 SolidCompression=yes
@@ -31,10 +31,13 @@ Source: "C:\Apps\hcolorcop\hcolorcop\release\hcolorcop.exe"; DestDir: "{app}"; F
 Source: "C:\Qt\4.4.3\bin\mingwm10.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Qt\4.4.3\bin\QtCore4.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Qt\4.4.3\bin\QtGui4.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\4.4.3\plugins\imageformats\*"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{group}\Haydar Color Cop"; Filename: "{app}\hcolorcop.exe"
+Name: "{group}\{cm:ProgramOnTheWeb,Haydar Color Cop}"; Filename: "http://www.haydarnet.nl"
+Name: "{group}\{cm:UninstallProgram,Haydar Color Cop}"; Filename: "{uninstallexe}"
 Name: "{commondesktop}\Haydar Color Cop"; Filename: "{app}\hcolorcop.exe"; Tasks: desktopicon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\Haydar Color Cop"; Filename: "{app}\hcolorcop.exe"; Tasks: quicklaunchicon
 
