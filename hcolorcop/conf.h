@@ -1,2 +1,2 @@
 #define CONFDIR ""
-#define DVERSION "0.9.5"
+#define DVERSION "1.0.0"

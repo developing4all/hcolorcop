@@ -1,12 +1,12 @@
-Source:				hcolorcop
-Section:			x11
-Priority:			extra
+Source:			hcolorcop
+Section:		x11
+Priority:		extra
 Maintainer: 		Haydar Alkaduhimi <haydar@haydarlinux.org>
 Build-Depends:		debhelper (>= 5)
 Standards-Version:	3.7.2
 
-Package:			hcolorcop
+Package:		hcolorcop
 Architecture:		any
-Depends:			libqt4-core (>= 4.3), libqt4-gui (>= 4.3)
+Depends:		libqt4-core (>= 4.3), libqt4-gui (>= 4.3)
 Description: A ColorCop alike program
  A ColorCop alike program for all platforms depending on QT4 library's. Because it makes heavy use of a high level API it can be kept small, stable and easy to maintain. It will also emulate the look of Windows 9x/XP to make the transfer to linux

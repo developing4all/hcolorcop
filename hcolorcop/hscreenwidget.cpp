@@ -29,8 +29,18 @@ HScreenWidget::HScreenWidget( QWidget *parent )
 
 void HScreenWidget::grabScreen( QPoint pos, int mult )
 {
+#ifdef Q_OS_WIN
+	if(!screenTimer->isActive())
+	{
+		QWidget *scr = QApplication::desktop();
+		WId w = scr->winId();
+		QPixmap pm = QPixmap::grabWindow(w,0,0,scr->width(), scr->height());
+		screenShot = pm.toImage();
+	}
+#else
 	if(!screenTimer->isActive())
 		screenShot = QPixmap::grabWindow( QApplication::desktop()->screen( QApplication::desktop()->screenNumber(pos) )->winId() ).toImage();
+#endif
 	
 	color = screenShot.pixel(pos);
 	
@@ -46,7 +56,14 @@ void HScreenWidget::grabScreen( QPoint pos, int mult )
 
 void HScreenWidget::regrabScreen()
 {
+#ifdef Q_OS_WIN
+	QWidget *scr = QApplication::desktop();
+	WId w = scr->winId();
+	QPixmap pm = QPixmap::grabWindow(w,0,0,scr->width(), scr->height());
+	screenShot = pm.toImage();
+#else
 	screenShot = QPixmap::grabWindow( QApplication::desktop()->winId() ).toImage();
+#endif
 	repaint();
 	emit rgbChanged( color );
 	emit imageChanged( img );
