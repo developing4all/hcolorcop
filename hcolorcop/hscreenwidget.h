@@ -12,9 +12,9 @@ class HScreenWidget : public QLabel
  public:
      HScreenWidget(QWidget *parent = 0);
      void grabScreen( QPoint, int );
-	 void setMultiply(int m){ multiply = m; repaint();};
+	 void setMultiply(int m){ multiply = m; repaint(); emit imageChanged(img);}
 	 void stopTimers();
-	 QImage getImage(){return img;};
+	 QImage getImage(){return img;}
 	 
  public slots:
      void regrabScreen();

@@ -1,6 +1,7 @@
 hcolorcop (1.0.0-1haydarlinux3) taha; urgency=low
 
   * Fixed multiple screens on window.
+  * Fixed changing magnifeing bug.
   * Stable release
 
  -- Haydar Alkaduhimi <haydar@haydarlinux.org>  Sat, 24 Jul 2010 13:27:55 +0200

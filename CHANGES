@@ -1,4 +1,5 @@
 1.0.0 - Fixed multiple screens on window
+      - Fixed changing magnifeing bug.
       - Stable release
 
 0.9.5 - Added Windows support.
