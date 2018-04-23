@@ -1,6 +1,6 @@
 SHELL = /bin/sh
 
-QTDIR=/usr/share/qt4
+QTDIR=/usr/lib/qt5
 
 DESTDIR  = /
 DEST  = $(DESTDIR)/usr
@@ -13,21 +13,18 @@ DATAPATH = $(DEST)/share
 STYLESDIR= $(DESTDIR)/$(QTDIR)/plugins/styles
 DESIGDIR= $(DESTDIR)/$(QTDIR)/plugins/designer
 
-DVERSION = 1.0.0
+DVERSION = 1.1.0
 
 all: config
 	cd hcolorcop ; $(qmake) hcolorcop.pro; $(MAKE)
-	cd hcolorcop ; $(lrelease) hcolorcop.pro 
-
+	cd hcolorcop ; $(lrelease) hcolorcop.pro
 
 config: Makefile
-	
 	cd hcolorcop ; \
 	(echo "#define CONFDIR \"$(SHAREPATH)\"" ; \
 	echo "#define DVERSION \"$(DVERSION)\"") > conf.h ;
-	
 	(echo "export DVERSION=$(DVERSION)") > config;
-	
+
 distclean:
 	cd hcolorcop ; $(qmake); 	$(MAKE) distclean
 	cd debian; rm -f hcolorcop_*
@@ -68,6 +65,5 @@ install: all
 	mkdir -p $(DEST)/share/applications
 	install hcolorcop.desktop $(DEST)/share/applications
 #	cp ./README $(SHAREPATH)/README
-	
 #	find $(SHAREPATH) -type d -name CVS | xargs rm -rf
 
