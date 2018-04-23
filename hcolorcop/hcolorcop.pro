@@ -1,5 +1,6 @@
 TEMPLATE = app
-TARGET = 
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+TARGET = hcolorcop
 DEPENDPATH += . release
 CONFIG += release
 INCLUDEPATH += .

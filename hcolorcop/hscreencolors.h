@@ -19,10 +19,10 @@ class HScreenColors : public QLabel
  	void rgbChanged( QRgb );
 	
  protected:
-	 virtual void paintEvent( QPaintEvent * );
-	 virtual void enterEvent( QEvent * );
-	 virtual void leaveEvent( QEvent * );
-	 virtual void mousePressEvent( QMouseEvent * );
+    virtual void paintEvent( QPaintEvent * );
+    virtual void enterEvent( QEvent * );
+    virtual void leaveEvent( QEvent * );
+    virtual void mousePressEvent( QMouseEvent * );
 	 
  private:
 	 QImage image;

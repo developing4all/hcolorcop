@@ -94,7 +94,7 @@ void HColorCop::colorClick()
 void HColorCop::pickerClick()
 {
     if ( !grabbing ) {          // prepare to grab...
-        grabbing = TRUE;
+        grabbing = true;
         grabMouse( QCursor( QPixmap(":images/picker_cursor.gif")) );
 		ui.pickerBtn->animateClick();
     }
@@ -106,12 +106,15 @@ void HColorCop::mouseMoveEvent ( QMouseEvent * event )
 		screenLabel->grabScreen( mapToGlobal(event->pos()), multiply );
 	else
 	{
-		if((qApp->widgetAt(mapToGlobal(event->pos())) != ui.screenShot) &&
-			(qApp->widgetAt(mapToGlobal(event->pos())) != ui.screenColors) )
-			mouseGrabber()->releaseMouse();
-		else
-			qApp->widgetAt(mapToGlobal(event->pos()))->grabMouse( QCursor( QPixmap(":images/picker_cursor.gif")) );
-	}
+        if((qApp->widgetAt(mapToGlobal(event->pos())) != ui.screenShot) &&
+            (qApp->widgetAt(mapToGlobal(event->pos())) != ui.screenColors))
+        {
+            if(mouseGrabber() != NULL)
+            {
+                mouseGrabber()->releaseMouse();
+            }
+        }
+    }
 }
 
 void HColorCop::mousePressEvent ( QMouseEvent * event )

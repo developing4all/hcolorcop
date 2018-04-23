@@ -5,6 +5,9 @@
 #include <QSize>
 #include <QMouseEvent>
 
+#include <QApplication>
+#include <QScreen>
+
 #include <iostream>
 using std:: cout; using std::endl;using std::cerr;
 #include <math.h>
@@ -34,11 +37,15 @@ void HScreenColors::leaveEvent( QEvent * )
 
 void HScreenColors::mousePressEvent( QMouseEvent * event )
 {
-	releaseMouse();
-	//currentPos = event->pos();
-	QImage img =  QPixmap::grabWindow( winId() ).toImage();
-	QRgb color = img.pixel(event->pos());
-	
+    //currentPos = event->pos();
+#if QT_VERSION >= 0x050000
+    QScreen *currentScreen = QApplication::primaryScreen();
+    QImage img =  currentScreen->grabWindow( winId() ).toImage();
+#else
+    QImage img =  QPixmap::grabWindow( winId() ).toImage();
+#endif
+    QRgb color = img.pixel(event->pos());
+
 	emit rgbChanged( color );
 	/*
 	repaint();
@@ -55,15 +62,9 @@ void HScreenColors::paintEvent( QPaintEvent * )
 	{
 		QVector<QRgb> colortable = image.colorTable();
 		
-		/*
-		cout << "colortable.size(): " << colortable.size() << endl;
-		cout << "image.numColors(): " << image.numColors() << endl;
-		cout << "image.size().width(): " << image.size().width() << endl;
-		*/
-		double numRows = sqrt( image.numColors() );
-		//cout << "numRows: " << numRows << endl;
-		double rest = fmod(numRows , 1.0);
-		//cout << "rest: " << rest << endl;
+        double numRows = sqrt( image.colorTable().size() );
+
+        double rest = fmod(numRows , 1.0);
 		if( rest > 0)
 			numRows += 1;
 		double width = image.size().width() / numRows;

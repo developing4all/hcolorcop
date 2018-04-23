@@ -8,7 +8,7 @@
 #include <QPainter>
 #include <QImage>
 #include <QMouseEvent>
-
+#include <QScreen>
 
 HScreenWidget::HScreenWidget( QWidget *parent )
 	:QLabel(parent)
@@ -38,8 +38,15 @@ void HScreenWidget::grabScreen( QPoint pos, int mult )
 		screenShot = pm.toImage();
 	}
 #else
-	if(!screenTimer->isActive())
-		screenShot = QPixmap::grabWindow( QApplication::desktop()->screen( QApplication::desktop()->screenNumber(pos) )->winId() ).toImage();
+    if(!screenTimer->isActive())
+    {
+#if QT_VERSION >= 0x050000
+        QScreen *currentScreen = QApplication::screens().at(QApplication::desktop()->screenNumber(pos));
+        screenShot = currentScreen->grabWindow((QApplication::desktop()->screen( QApplication::desktop()->screenNumber(pos)))->winId()).toImage();
+#else
+        screenShot = QPixmap::grabWindow( QApplication::desktop()->screen( QApplication::desktop()->screenNumber(pos) )->winId() ).toImage();
+#endif
+    }
 #endif
 	
 	color = screenShot.pixel(pos);
@@ -62,7 +69,12 @@ void HScreenWidget::regrabScreen()
 	QPixmap pm = QPixmap::grabWindow(w,0,0,scr->width(), scr->height());
 	screenShot = pm.toImage();
 #else
-	screenShot = QPixmap::grabWindow( QApplication::desktop()->winId() ).toImage();
+    #if QT_VERSION >= 0x050000
+    QScreen *currentScreen = QApplication::primaryScreen();
+    screenShot = currentScreen->grabWindow(QApplication::desktop()->winId()).toImage();
+    #else
+    screenShot = QPixmap::grabWindow( QApplication::desktop()->winId() ).toImage();
+    #endif
 #endif
 	repaint();
 	emit rgbChanged( color );
@@ -76,12 +88,12 @@ void HScreenWidget::stopTimers()
 	emit imageChanged( img );
 }
 
-void HScreenWidget::enterEvent( QEvent * event )
+void HScreenWidget::enterEvent( QEvent * )
 {
 	grabMouse( QCursor( QPixmap(":images/picker_cursor.gif")) );
 }
 
-void HScreenWidget::leaveEvent( QEvent * event )
+void HScreenWidget::leaveEvent( QEvent * )
 {
 	releaseMouse();
 }
@@ -95,7 +107,7 @@ void HScreenWidget::mousePressEvent( QMouseEvent * event )
 }
 
 
-void HScreenWidget::paintEvent( QPaintEvent * event )
+void HScreenWidget::paintEvent( QPaintEvent * )
 {
 	
 	QPainter painter(this);

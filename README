@@ -1,13 +1,12 @@
 
-Win2Lin
-=======
+Haydar Color Cop
+================
 
-Development
+Summary
 ===========
-Feel free to create some configuration files and other programs
-based on hde, the libhde give you an easy way to render and text
-or change it's language for your applications including arabic 
-rendering.
+Haydar Color Cop is a multi-purpose color picker for web designers and programmers.
+It features an eyedropper, magnifier, variable magnification levels
+
 
 AUTHOR
 ======
@@ -15,5 +14,5 @@ Haydar Alkaduhimi <haydar@haydarnet.nl>
 
 WEB ADDRESS
 ===========
-http://win2lin.sourceforge.net
+http://hcolorcop.sourceforge.net
 
