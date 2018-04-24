@@ -1,50 +1,13 @@
 SHELL = /bin/sh
 
-QTDIR=/usr/lib/x86_64-linux-gnu/qt5
-
-uname_m := $(shell uname -m)
-
-ifeq ($(uname_m),i386)
-  QTDIR=/usr/lib/i386-linux-gnu/qt5
-endif
-ifeq ($(uname_m),x86)
-  QTDIR=/usr/lib/i386-linux-gnu/qt5
-endif
-
-ifeq ($(uname_m),amd64)
-  QTDIR=/usr/lib/x86_64-linux-gnu/qt5
-endif
-ifeq ($(uname_m),x86_64)
-  QTDIR=/usr/lib/x86_64-linux-gnu/qt5
-endif
-
-ifeq ($(uname_m),armhf)
-  QTDIR=/usr/lib/arm-linux-gnueabihf/qt5
-endif
-ifeq ($(uname_m),armv7l)
- QTDIR=/usr/lib/arm-linux-gnueabihf/qt5
-endif
-
-
-ifeq ($(uname_m),arm64)
-   QTDIR=/usr/lib/aarch64-linux-gnu/qt5
-endif
-ifeq ($(uname_m),aarch64)
-  QTDIR=/usr/lib/aarch64-linux-gnu/qt5
-endif
-
-$(info QTDIR=$(QTDIR))
-
 DESTDIR  = /
 DEST  = $(DESTDIR)/usr
-qmake = $(QTDIR)/bin/qmake
-lrelease = $(QTDIR)/bin/lrelease
+qmake = qmake
+lrelease = lrelease
 #DEST  = /usr/local
 BINPATH = $(DEST)/bin
 
 DATAPATH = $(DEST)/share
-STYLESDIR= $(DESTDIR)/$(QTDIR)/plugins/styles
-DESIGDIR= $(DESTDIR)/$(QTDIR)/plugins/designer
 
 DVERSION = 1.1.0
 
