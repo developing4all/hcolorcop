@@ -1,27 +1,5 @@
 #!/bin/sh
-export QTDIR=/usr/share/qt4
+#export QTDIR=/usr/share/qt4
 
 debuild -us -uc -tc --lintian-opts --profile debian
 
-#make
-#
-#. ./config
-#
-#
-#mkdir -p debian/hcoloredit/usr/bin
-#mkdir -p debian/hcoloredit/usr/share/applications
-#mkdir -p debian/hcoloredit/usr/share/icons
-#mkdir -p debian/hcoloredit/DEBIAN
-#make ROOT=`pwd`/debian/hcoloredit install
-#cp hcolorcop.desktop debian/hcoloredit/usr/share/applications/
-#cp hcolorcop/images/hcolorcop-48.png debian/hcoloredit/usr/share/icons/hcolorcop.png
-#find ./debian/hcoloredit -type d | xargs chmod 755
-#cp debian/control debian/hcoloredit/DEBIAN/control
-#cp CHANGES debian/hcoloredit/DEBIAN/changelog
-#cp debian/compat debian/hcoloredit/DEBIAN/
-#cp debian/copyright debian/hcoloredit/DEBIAN/
-#dpkg-deb --build debian/hcoloredit
-#
-#rm -rf debian/hcoloredit
-#
-#mv debian/hcoloredit.deb debian/hcolorcop_$DVERSION-1_i386.deb

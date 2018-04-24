@@ -1,8 +1,8 @@
 hcolorcop (1.1.0-1haydarlinux4) stable; urgency=low
 
-  * Stable release
+  * Added Qt5 support
 
- -- Haydar Alkaduhimi <haydar@haydarnet.com>  Mon, 23 Apr 2018 15:21:49 +0200
+ -- Haydar Alkaduhimi <haydar@haydarnet.nl>  Mon, 23 Apr 2018 15:21:49 +0200
 
 hcolorcop (1.0.0-1haydarlinux3) taha; urgency=low
 
