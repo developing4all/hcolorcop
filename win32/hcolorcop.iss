@@ -7,7 +7,7 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{EBD0B8EB-3D2D-42F1-89CA-4DD94F815845}
 AppName=Haydar Color Cop
-AppVerName=Haydar Color Cop 0.9.5
+AppVerName=Haydar Color Cop 1.1.0
 AppPublisher=Haydar Net
 AppPublisherURL=http://www.haydarnet.nl
 AppSupportURL=http://www.haydarnet.nl
@@ -27,11 +27,14 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Apps\hcolorcop\hcolorcop\release\hcolorcop.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\4.4.3\bin\mingwm10.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\4.4.3\bin\QtCore4.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\4.4.3\bin\QtGui4.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\4.4.3\plugins\imageformats\*"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Apps\hcolorcop\bin\hcolorcop.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Apps\hcolorcop\bin\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Apps\hcolorcop\bin\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Apps\hcolorcop\bin\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Apps\hcolorcop\bin\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Apps\hcolorcop\bin\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Apps\hcolorcop\bin\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "C:\Qt\4.4.3\plugins\imageformats\*"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
