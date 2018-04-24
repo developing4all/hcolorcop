@@ -8,7 +8,7 @@
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
-
+export QT_SELECT=qt5
 
 
 
@@ -53,17 +53,6 @@ install: build
 
 	# Add here commands to install the package into debian/hcolorcop.
 	$(MAKE) DESTDIR=$(CURDIR)/debian/hcolorcop install
-#	mkdir -p debian/hcolorcop/usr/share/applications
-#	#mkdir -p debian/hcolorcop/usr/share/icons
-#	mkdir -p debian/hcolorcop/usr/share/icons/hicolor/128x128/apps
-#	install hcolorcop/images/hcolorcop-128x128.png debian/hcolorcop/usr/share/icons/hicolor/128x128/apps/
-#	install hcolorcop/images/hcolorcop-128x128.png debian/hcolorcop/usr/share/icons/hcolorcop.png
-#	for s in 96x96 64x64 48x48 32x32 22x22 16x16; do \
-#		mkdir -p debian/hcolorcop/usr/share/icons/hicolor/$${s}/apps ;\
-#		install hcolorcop/images/hcolorcop-$${s}.png debian/hcolorcop/usr/share/icons/hicolor/$${s}/apps/hcolorcop.png ;\
-#	done
-#	mkdir -p debian/hcolorcop/usr/share/applications
-#	install hcolorcop.desktop debian/hcolorcop/usr/share/applications
 
 
 # Build architecture-independent files here.
@@ -77,24 +66,12 @@ binary-arch: build install
 	dh_installchangelogs CHANGES
 	dh_installdocs
 	dh_installexamples
-#	dh_install
 	dh_installmenu
-#	dh_installdebconf	
-#	dh_installlogrotate
-#	dh_installemacsen
-#	dh_installpam
-#	dh_installmime
-#	dh_python
-#	dh_installinit
-#	dh_installcron
-#	dh_installinfo
 	dh_installman
 	dh_link
 	dh_strip
 	dh_compress
 	dh_fixperms
-#	dh_perl
-#	dh_makeshlibs
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol

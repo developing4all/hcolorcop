@@ -2,11 +2,12 @@ Source:			hcolorcop
 Section:		x11
 Priority:		extra
 Maintainer:		Haydar Alkaduhimi <haydar@haydarlinux.org>
-Build-Depends:		debhelper (>= 5), qt5-qmake-bin, qttools5-dev-tools
+Build-Depends:		debhelper (>= 5), qtbase5-dev, qttools5-dev-tools, qtbase5-dev
 Standards-Version:	3.7.2
 
 Package:		hcolorcop
 Architecture:		any
-Depends:		libqt5gui5 (>= 5.3)
+Depends:		libqt5gui5 (>= 5.3), ${misc:Depends}, ${shlibs:Depends}
 Description: A ColorCop alike program
- A ColorCop alike program for all platforms depending on QT4 library's. Because it makes heavy use of a high level API it can be kept small, stable and easy to maintain. It will also emulate the look of Windows 9x/XP to make the transfer to linux
+ Haydar Color Cop is a multi-purpose color picker for web designers and programmers.
+ It features an eyedropper, magnifier, variable magnification levels
